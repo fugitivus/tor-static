@@ -3,13 +3,13 @@
 
 ### Howto:
 1. Download and install MinGw32 and Msys2
-
-  Download Link: https://repo.msys2.org/distrib/x86_64/msys2-x86_64-20190524.exe
-  
-  Download Link: https://osdn.net/projects/mingw/downloads/68260/mingw-get-setup.exe/
 2. Run Mingw32
 3. Copy tor-static.sh to your Home-Folder
 4. Run sh tor-static.sh
+
+### Download Links:
+https://repo.msys2.org/distrib/x86_64/msys2-x86_64-20190524.exe
+https://osdn.net/projects/mingw/downloads/68260/mingw-get-setup.exe/
 
 ### LEGAL DISCLAIMER
 This Repository contains materials that can be potentially damaging or dangerous.
