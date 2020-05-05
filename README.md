@@ -1,4 +1,6 @@
 # Tor Standalone - Static Build
+based on Nullable Securitys Tor static build Tutorial.
+https://github.com/fugitivus/tor-static/tree/master
 # use for educational purposes only!!!
 
 ### Howto:
