@@ -7,8 +7,10 @@
 3. Copy tor-static.sh to your Home-Folder
 4. Run sh tor-static.sh
 
-### Download Links:
+### Download Msys2:
 https://repo.msys2.org/distrib/x86_64/msys2-x86_64-20190524.exe
+
+### Download MinGW:
 https://osdn.net/projects/mingw/downloads/68260/mingw-get-setup.exe/
 
 ### LEGAL DISCLAIMER
