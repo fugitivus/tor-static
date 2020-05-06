@@ -10,9 +10,9 @@ https://blog.nullable.software/2017/08/statically-compile-tor_5.html
 4. Run sh tor-static.sh
 
 ### Download Msys2:
-https://repo.msys2.org/distrib/x86_64/msys2-x86_64-20190524.exe
+https://www.msys2.org/
 
-### Download MinGW:
+### Download MinGW(32Bit):
 https://osdn.net/projects/mingw/downloads/68260/mingw-get-setup.exe/
 
 ### LEGAL DISCLAIMER
