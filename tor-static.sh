@@ -5,22 +5,19 @@
     # visit wiki pages of msys2 for further information
 
     pacman -Syuu
-    pacman -S libgcrypt-devel
-    pacman -S libevent-devel
-    pacman -S msys/make msys/perl msys/tar
-    pacman -S mingw32/mingw-w64-i686-binutils msys/binutils
-    pacman -S mingw32/mingw-w64-i686-gcc
-    pacman -S mingw32/mingw-w64-i686-make
-    pacman -S msys/pkg-config mingw32/mingw-w64-i686-pkg-config
+    pacman -S libgcrypt-devel --noconfirm
+    pacman -S libevent-devel --noconfirm
+    pacman -S msys/make msys/perl msys/tar --noconfirm
+    pacman -S mingw32/mingw-w64-i686-binutils msys/binutils --noconfirm
+    pacman -S mingw32/mingw-w64-i686-gcc --noconfirm
+    pacman -S mingw32/mingw-w64-i686-make --noconfirm
+    pacman -S msys/pkg-config mingw32/mingw-w64-i686-pkg-config --noconfirm
      
     # change console to mingw32 console (mingw32.exe)
     # download required libraries for build process (openssl,zlib,libevent)
     # Currently I cannot compile tor with openssl version greater than 1.0.2j
     wget https://www.openssl.org/source/openssl-1.0.2j.tar.gz
-
-    #######################################wget http://zlib.net/zlib-1.2.8.tar.gz
     wget http://zlib.net/zlib-1.2.11.tar.gz
-    #######################################wget https://github.com/libevent/libevent/releases/download/release-2.0.22-stable/libevent-2.0.22-stable.tar.gz
     wget https://github.com/libevent/libevent/releases/download/release-2.1.11-stable/libevent-2.1.11-stable.tar.gz
 
 
@@ -57,15 +54,15 @@
     # now it is time to compile tor if everything is OK above
     cd ~/tor/tor-0.4.2.7/
      
-    export LDFLAGS="-static -static-libgcc -L$HOME/openssl/install/lib -L$HOME/libevent/install/lib -L$HOME/zlib/zlib-1.2.8 -L/mingw32/lib -L/mingw32/i686-w64-mingw32/lib"
-    export CFLAGS="-I$HOME/openssl/install/include -I$HOME/zlib/zlib-1.2.8 -I$HOME/libevent/install/include"
-    export LIBRARY_PATH="$HOME/openssl/install/lib:$HOME/libevent/install/lib:$HOME/zlib/zlib-1.2.8:/mingw32/lib:/mingw32/i686-w64-mingw32/lib"
-    export INCLUDE_PATH="$HOME/openssl/install/include:$HOME/zlib/zlib-1.2.8:$HOME/libevent/install/include:/mingw32/include:/mingw32/i686-w64-mingw32/include"
+    export LDFLAGS="-static -static-libgcc -L$HOME/openssl/install/lib -L$HOME/libevent/install/lib -L$HOME/zlib/zlib-1.2.11 -L/mingw32/lib -L/mingw32/i686-w64-mingw32/lib"
+    export CFLAGS="-I$HOME/openssl/install/include -I$HOME/zlib/zlib-1.2.11 -I$HOME/libevent/install/include"
+    export LIBRARY_PATH="$HOME/openssl/install/lib:$HOME/libevent/install/lib:$HOME/zlib/zlib-1.2.11:/mingw32/lib:/mingw32/i686-w64-mingw32/lib"
+    export INCLUDE_PATH="$HOME/openssl/install/include:$HOME/zlib/zlib-1.2.11:$HOME/libevent/install/include:/mingw32/include:/mingw32/i686-w64-mingw32/include"
     export BINARY_PATH="/mingw32/bin:/mingw32/i686-w64-mingw32/bin"
     export PKG_CONFIG_PATH="$HOME/openssl/install/lib/pkgconfig:$PKG_CONFIG_PATH"
      
     # this is important if -lcrypt32 is omitted, you may get linker error
-    # export LIBS="-lcrypt32"
+    export LIBS="-lcrypt32"
      
     ./configure --disable-gcc-hardening --enable-static-tor --prefix="$HOME/tor/install" --with-libevent-dir="$HOME/libevent/install/lib" --with-openssl-dir="$HOME/openssl/install/lib" --with-zlib-dir="$HOME/zlib/zlib-1.2.11"
     make
