@@ -1,5 +1,5 @@
 # Tor Static Cross compile From Linux to Windows10(32bit)
-# Tested on Debian 10 (Buster) 64bit
+# Tested on Debian 10 (Buster) 64bit (Docker Container)
 
 
 # Install Cross-Compiler-Environment:
