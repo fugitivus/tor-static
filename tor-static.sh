@@ -1,9 +1,5 @@
-    # written on a cold November day 2016
-    # these instructions are for x86 computers, for x64 you know what to do :)
-    # install msys2 from http://msys2.github.io/
-    # after installation, open msys2 console and install some useful packages (msys2.exe)
-    # visit wiki pages of msys2 for further information
-
+    #Tor Static Build, testet on Windows 10 Ming32 / Msys2
+    
     pacman -Syuu
     pacman -S libgcrypt-devel --noconfirm
     pacman -S libevent-devel --noconfirm
@@ -15,14 +11,12 @@
      
     # change console to mingw32 console (mingw32.exe)
     # download required libraries for build process (openssl,zlib,libevent)
-    # Currently I cannot compile tor with openssl version greater than 1.0.2j
     wget https://www.openssl.org/source/openssl-1.0.2j.tar.gz
     wget http://zlib.net/zlib-1.2.11.tar.gz
     wget https://github.com/libevent/libevent/releases/download/release-2.1.11-stable/libevent-2.1.11-stable.tar.gz
-
-
-
     wget https://www.torproject.org/dist/tor-0.4.2.7.tar.gz
+
+    # decompress downloaded packages
     mkdir openssl && mkdir libevent && mkdir zlib && mkdir tor
     tar xzf openssl-1.0.2j.tar.gz -C openssl
     tar xzf zlib-1.2.11.tar.gz -C zlib
