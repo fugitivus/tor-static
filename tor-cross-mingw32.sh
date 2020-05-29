@@ -68,3 +68,13 @@
     make install
     cd..
 
+# cleanup:
+    rm zlib-1.2.11.tar.gz
+    rm libevent-2.1.11-stable.tar.gz
+    rm openssl-1.0.2j.tar.gz
+    rm tor-0.4.2.7.tar.gz
+    rm -r /zlib-1.2.11
+    rm -r /libevent-2.1.11-stable
+    rm -r /openssl-1.0.2j
+    rm -r /tor-0.4.2.7
+    
