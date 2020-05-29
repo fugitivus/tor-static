@@ -6,8 +6,8 @@ https://blog.nullable.software/2017/08/statically-compile-tor_5.html
 ### Howto:
 1. Download and install MinGw32 and Msys2
 2. Run Mingw32
-3. Copy tor-static.sh to your Home-Folder
-4. Run sh tor-static.sh
+3. Copy tor-static-windows.sh to your Home-Folder (wget?)
+4. Run sh tor-static-windows.sh
 
 ### Download Msys2:
 https://www.msys2.org/
