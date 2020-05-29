@@ -52,7 +52,7 @@
 
     make
     make install
-    cd..
+    cd ..
 
 # cleanup:
     exit
