@@ -45,17 +45,17 @@
 # Build Tor:
     cd /tor-0.4.2.7
     export LIBS="-lssl -lcrypto -lpthread -ldl"
-    export LDFLAGS="-static -static-libgcc -L/usr/lib/gcc/x86_64-linux-gnu/8/ -L-I/openssl-1.0.2j/install/lib/"
+    export LDFLAGS="-static -static-libgcc -L/usr/lib/gcc/x86_64-linux-gnu/8/ -L/openssl-1.0.2j/install/lib/"
     export CFLAGS="-I/openssl-1.0.2j/install/lib/include -I/zlib-1.2.8 -I/libevent-2.1.11-stable/install/include/"
 
-	./configure --prefix="$HOME/tor/install" --enable-dtatic-tor --with-libevent-dir="/libevent-2.1.11-stable/install/" --with-openssl-dir="/openssl-1.0.2j/install/" --with-zlib-dir="/zlib-1.2.11"
+	./configure --prefix="$HOME/tor/install" --enable-static-tor --with-libevent-dir="/libevent-2.1.11-stable/install/" --with-openssl-dir="/openssl-1.0.2j/install/" --with-zlib-dir="/zlib-1.2.11"
 
-    #--enable-static-tor
     make
     make install
     cd..
 
 # cleanup:
+    exit
     rm zlib-1.2.11.tar.gz
     rm libevent-2.1.11-stable.tar.gz
     rm openssl-1.0.2j.tar.gz
