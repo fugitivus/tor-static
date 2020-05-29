@@ -22,7 +22,6 @@
     tar xfv tor-0.4.2.7.tar.gz
     
 # Build Zlib:  
-    exit
 	cd zlib-1.2.11
     ./configure --prefix="/libevent-2.1.11-stable/install"
     make BINARY_PATH=$PREFIXDIR/bin INCLUDE_PATH=$PREFIXDIR/include LIBRARY_PATH=$PREFIXDIR/lib SHARED_MODE=1 install
