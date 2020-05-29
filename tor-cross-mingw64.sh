@@ -66,7 +66,7 @@
     #--enable-static-tor
     make
     make install
-    cd..
+    cd ..
     
 # cleanup:
     rm zlib-1.2.11.tar.gz
