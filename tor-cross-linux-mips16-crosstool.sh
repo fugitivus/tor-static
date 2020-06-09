@@ -21,14 +21,14 @@
     
 # Build Zlib:
 	cd zlib-1.2.11
-    export CC="mips-unknown-linux-uclibc-gcc -static"
+    export CC="mips-unknown-linux-uclibc-gcc -static -Os"
     ./configure --prefix="$HOME/git/crosstool-ng/workdir/zlib-1.2.11/install"
     make BINARY_PATH=$PREFIXDIR/bin INCLUDE_PATH=$PREFIXDIR/include LIBRARY_PATH=$PREFIXDIR/lib SHARED_MODE=1 install
 	cd ..
     
 # Build libevent:
     cd libevent-2.1.11-stable
-    export CC="mips-unknown-linux-uclibc-gcc" 
+    export CC="mips-unknown-linux-uclibc-gcc -Os" 
     ./configure --prefix="$HOME/git/crosstool-ng/workdir/libevent-2.1.11-stable/install" --enable-static --disable-shared LDFLAGS="-static"
     make
     make install
@@ -36,7 +36,7 @@
     
 # Build openssl:
     cd openssl-1.0.2j
-    export CC="mips-unknown-linux-uclibc-gcc"
+    export CC="mips-unknown-linux-uclibc-gcc -Os"
     export LDFLAGS="-static -static-libgcc" 
     
     ./Configure linux-generic32 shared --prefix="$HOME/git/crosstool-ng/workdir/openssl-1.0.2j/install/" 
@@ -47,7 +47,7 @@
 	
 # Build Tor:
     cd tor-0.4.2.7
-    export CC="mips-unknown-linux-uclibc-gcc"
+    export CC="mips-unknown-linux-uclibc-gcc -Os"
     #export LIBS="-lssl -lcrypto -lpthread -ldl"
     export LDFLAGS="-static -static-libgcc"
     export CFLAGS="-I$HOME/git/crosstool-ng/workdir/openssl-1.0.2j/install/lib/include -I$HOME/git/crosstool-ng/workdir/zlib-1.2.8 -I$HOME/git/crosstool-ng/workdir/libevent-2.1.11-stable/install/include"
